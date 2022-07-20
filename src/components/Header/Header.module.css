@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.hamburgerIcon {
+    cursor: pointer;
+}
+
+@media (min-width: 376px) {
+    .hamburgerIcon {
+        display: none;
+    }
+}
