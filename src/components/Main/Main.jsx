@@ -1,6 +1,5 @@
 import React from "react"
 import cn from 'classnames'
-import MobileMenu from "../MobileMenu/MobileMenu"
 
 import styles from './Main.module.css'
 
