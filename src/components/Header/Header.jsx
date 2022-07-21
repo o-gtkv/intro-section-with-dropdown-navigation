@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import cn from 'classnames'
 import MobileMenu from "../MobileMenu/MobileMenu"
+import MenuList from "../MenuList/MenuList"
 import Media from 'react-media'
 
 import styles from './Header.module.css'
@@ -19,7 +20,23 @@ function Header() {
         <header className={cn(styles.header)}>
             <img src={logo} alt="logo" />
             <img className={cn(styles.hamburgerIcon)} src={menu} alt="menu" onClick={handleHamburgerIconClick} />
-            <MobileMenu active={mobileMenuIsActive} onClose={() => setMobileMenuIsActive(false)} />
+            <Media queries={{
+                small: "(max-width: 1023px)",
+                large: "(min-width: 1024px)"
+            }}>
+                {matches => (
+                    <>
+                        {matches.small && <MobileMenu active={mobileMenuIsActive} onClose={() => setMobileMenuIsActive(false)} />}
+                        {matches.large && <MenuList />}
+                        {matches.large &&
+                            <div className={cn(styles.authWrapper)}>
+                                <a className={cn(styles.loginLink)} href="/">Login</a>
+                                <a className={cn(styles.registerLink)} href="/">Register</a>
+                            </div>
+                        }
+                    </>
+                )}
+            </Media>
         </header>
     )
 }

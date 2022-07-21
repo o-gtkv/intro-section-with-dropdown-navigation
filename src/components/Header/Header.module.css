@@ -1,6 +1,7 @@
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 30px;
 }
 
@@ -8,8 +9,30 @@
     cursor: pointer;
 }
 
-@media (min-width: 376px) {
+@media (min-width: 1024px) {
     .hamburgerIcon {
         display: none;
+        border: 1px solid black;
+    }
+
+    .header {
+        justify-content: initial;
+    }
+
+    .loginLink,
+    .registerLink {
+        text-decoration: none;
+        color: var(--medium-gray)
+    }
+
+    .registerLink {
+        border: 1px solid var(--medium-gray);
+        border-radius: 15px;
+        padding: 10px 40px;
+        margin-left: 30px;
+    }
+
+    .authWrapper {
+        margin-left: auto;
     }
 }

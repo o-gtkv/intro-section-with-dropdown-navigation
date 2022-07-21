@@ -15,6 +15,6 @@
 }
 
 body {
-
+	background-color: var(--almost-white);
 	/* font-size: 18px; */
 }

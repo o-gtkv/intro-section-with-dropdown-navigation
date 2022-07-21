@@ -41,7 +41,7 @@
     border: 1px solid var(--almost-black);
 }
 
-@media (min-width: 376px) {
+@media (min-width: 1024px) {
     .main {
         display: flex;
         flex-direction: row-reverse;
